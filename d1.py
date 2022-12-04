@@ -24,5 +24,6 @@ for elf in elves:
         max_cal_2 = total
     elif total > max_cal_3:
         max_cal_3 = total
-
+        
+print(max_cal_1)
 print(max_cal_1 + max_cal_2 + max_cal_3)
