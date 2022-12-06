@@ -1,34 +1,56 @@
 with open('input.txt', mode='r') as file:
     t = (file.read()).splitlines()
 
-total = 0
+answer_1 = 0
+answer_2 = 0
 for line in t:
     first = line.split(' ')[0]
     second = line.split(' ')[1]
-    second = second.replace('X', 'A')
-    second = second.replace('Y', 'B')
-    second = second.replace('Z', 'C')
 
     if first == 'A':
-        if second == 'A':
-            total += 4
-        elif second == 'B':
-            total += 8
+        if second == 'X':
+            answer_1 += 4
+        elif second == 'Y':
+            answer_1 += 8
         else:
-            total += 3
+            answer_1 += 3
     elif first == 'B':
-        if second == 'A':
-            total += 1
-        elif second == 'B':
-            total += 5
+        if second == 'X':
+            answer_1 += 1
+        elif second == 'Y':
+            answer_1 += 5
         else:
-            total += 9
+            answer_1 += 9
     else:
-        if second == 'A':
-            total += 7
-        elif second == 'B':
-            total += 2
+        if second == 'X':
+            answer_1 += 7
+        elif second == 'Y':
+            answer_1 += 2
         else:
-            total += 6
+            answer_1 += 6
 
-print(total)
+    # part 2
+    if first == 'A':
+        if second == 'X':
+            answer_2 += 3
+        elif second == 'Y':
+            answer_2 += 4
+        else:
+            answer_2 += 8
+    elif first == 'B':
+        if second == 'X':
+            answer_2 += 1
+        elif second == 'Y':
+            answer_2 += 5
+        else:
+            answer_2 += 9
+    else:
+        if second == 'X':
+            answer_2 += 2
+        elif second == 'Y':
+            answer_2 += 6
+        else:
+            answer_2 += 7
+
+print(answer_1)
+print(answer_2)
